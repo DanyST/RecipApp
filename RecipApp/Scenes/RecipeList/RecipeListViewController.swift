@@ -63,7 +63,7 @@ final class RecipeListViewController: UIViewController, RecipeListViewModelViewD
 extension RecipeListViewController {
     func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Discover"
+        title = "Discover".localized
     }
 }
 
