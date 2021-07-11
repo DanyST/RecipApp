@@ -19,7 +19,12 @@ final class RecipeCoordinator: Coordinator {
     
     // MARK: - Methods
     override func start() {
-        let recipeListViewController = RecipeListViewController()
+        let recipeListViewModel = RecipeListViewModel()
+        let recipeListViewController = RecipeListViewController(viewModel: recipeListViewModel)
+        recipeListViewModel.coordinatorDelegate = self
+        recipeListViewModel.viewDelegate = recipeListViewController
         presenter.pushViewController(recipeListViewController, animated: false)
     }
 }
+
+extension RecipeCoordinator: RecipeListViewModelCoordinatorDelegate {}
