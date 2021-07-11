@@ -22,7 +22,9 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(RecipeDetailHeaderView.self, forHeaderFooterViewReuseIdentifier: RecipeDetailHeaderView.reuseIdentifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.cellId)
+        tableView.contentInsetAdjustmentBehavior = .never
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -41,6 +43,11 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         ])
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     // MARK: - Initialization
     init(viewModel: RecipeDetailViewModelProtocol) {
         self.viewModel = viewModel
@@ -52,7 +59,7 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
     }
 }
 
-
+// MARK: - UITableViewDataSource
 extension RecipeDetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections
@@ -68,4 +75,14 @@ extension RecipeDetailViewController: UITableViewDataSource {
     }
 }
 
-extension RecipeDetailViewController: UITableViewDelegate {}
+// MARK: - UITableViewDelegate
+extension RecipeDetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let recipeHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: RecipeDetailHeaderView.reuseIdentifier)
+        return recipeHeaderView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return view.frame.height / 3
+    }
+}
