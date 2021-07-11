@@ -12,8 +12,8 @@ final class RecipeCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     static let reuseIdentifier = "\(RecipeCollectionViewCell.self)"
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
+    private let imageView: RoundedImageView = {
+        let imageView = RoundedImageView(roundedType: .rounded)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
