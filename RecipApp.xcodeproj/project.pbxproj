@@ -69,6 +69,22 @@
 			path = RecipeList;
 			sourceTree = "<group>";
 		};
+		935DCA7F269A744200AD5FD5 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				935DCA80269A744700AD5FD5 /* Views */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		935DCA80269A744700AD5FD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				935DCA73269A6F1000AD5FD5 /* RoundedImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		93DAE192269A4E090020CC7B = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +108,7 @@
 				93DAE1A0269A4E0A0020CC7B /* SceneDelegate.swift */,
 				935DCA75269A70B200AD5FD5 /* AppCoordinator */,
 				935DCA7D269A73FA00AD5FD5 /* Scenes */,
-				935DCA73269A6F1000AD5FD5 /* RoundedImageView.swift */,
+				935DCA7F269A744200AD5FD5 /* Commons */,
 				93DAE1A7269A4E130020CC7B /* Assets.xcassets */,
 				93DAE1A9269A4E130020CC7B /* LaunchScreen.storyboard */,
 				93DAE1AC269A4E130020CC7B /* Info.plist */,
