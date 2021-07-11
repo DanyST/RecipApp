@@ -81,6 +81,7 @@ extension RecipeCollectionViewCell {
     
     func setupDetailLabels() {
         let stackView = UIStackView(arrangedSubviews: [categoryLabel, timeLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.alignment = .fill
