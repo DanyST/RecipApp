@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		935DCA74269A6F1000AD5FD5 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DCA73269A6F1000AD5FD5 /* RoundedImageView.swift */; };
 		93DAE19F269A4E0A0020CC7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DAE19E269A4E0A0020CC7B /* AppDelegate.swift */; };
 		93DAE1A1269A4E0A0020CC7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DAE1A0269A4E0A0020CC7B /* SceneDelegate.swift */; };
 		93DAE1A8269A4E130020CC7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DAE1A7269A4E130020CC7B /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		935DCA73269A6F1000AD5FD5 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		93DAE19B269A4E0A0020CC7B /* RecipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DAE19E269A4E0A0020CC7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93DAE1A0269A4E0A0020CC7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				93DAE1A0269A4E0A0020CC7B /* SceneDelegate.swift */,
 				93DAE1B2269A50AC0020CC7B /* RecipeListViewController.swift */,
 				93DAE1B4269A53BB0020CC7B /* RecipeCollectionViewCell.swift */,
+				935DCA73269A6F1000AD5FD5 /* RoundedImageView.swift */,
 				93DAE1A7269A4E130020CC7B /* Assets.xcassets */,
 				93DAE1A9269A4E130020CC7B /* LaunchScreen.storyboard */,
 				93DAE1AC269A4E130020CC7B /* Info.plist */,
@@ -138,6 +141,7 @@
 			files = (
 				93DAE1B5269A53BB0020CC7B /* RecipeCollectionViewCell.swift in Sources */,
 				93DAE19F269A4E0A0020CC7B /* AppDelegate.swift in Sources */,
+				935DCA74269A6F1000AD5FD5 /* RoundedImageView.swift in Sources */,
 				93DAE1A1269A4E0A0020CC7B /* SceneDelegate.swift in Sources */,
 				93DAE1B3269A50AC0020CC7B /* RecipeListViewController.swift in Sources */,
 			);
