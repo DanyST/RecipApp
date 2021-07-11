@@ -7,13 +7,15 @@
 
 import UIKit
 
-final class RecipeListViewController: UIViewController {
+final class RecipeListViewController: UIViewController, RecipeListViewModelViewDelegate {
     
     enum Constants {
         static let columns: CGFloat = 2
     }
     
     // MARK: - Properties
+    private let viewModel: RecipeListViewModelProtocol
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 24
@@ -44,6 +46,16 @@ final class RecipeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    // MARK: - Initialization
+    init(viewModel: RecipeListViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
