@@ -43,8 +43,8 @@ final class RecipeListViewController: UIViewController, RecipeListViewModelViewD
         ])
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupUI()
     }
     
@@ -63,6 +63,7 @@ final class RecipeListViewController: UIViewController, RecipeListViewModelViewD
 extension RecipeListViewController {
     func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.isHidden = false
         title = "Discover".localized
     }
 }
