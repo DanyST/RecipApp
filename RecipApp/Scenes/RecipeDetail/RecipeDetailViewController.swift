@@ -22,6 +22,20 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         return tableView
     }()
     
+    // MARK: - Life Cycle
+    override func loadView() {
+        view = UIView()
+        view.backgroundColor = .systemBackground
+        
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
     // MARK: - Initialization
     init(viewModel: RecipeDetailViewModelProtocol) {
         self.viewModel = viewModel
