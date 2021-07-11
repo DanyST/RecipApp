@@ -55,7 +55,7 @@ final class RecipeCollectionViewCell: UICollectionViewCell {
 }
 
 // MARK: - UI Methods
-extension RecipeCollectionViewCell {
+private extension RecipeCollectionViewCell {
     func setupUI() {
         backgroundColor = .systemBackground
         setupConstraints()
@@ -110,7 +110,7 @@ extension RecipeCollectionViewCell {
         timeLabel.text = time
     }
     
-    func loadImage(fromUrl url: URL) {
+    private func loadImage(fromUrl url: URL) {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let data = try? Data(contentsOf: url),
                   let image = UIImage(data: data) else { return }

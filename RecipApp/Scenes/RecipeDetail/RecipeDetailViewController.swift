@@ -10,7 +10,7 @@ import UIKit
 class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDelegate {
     
     enum Constants {
-        static let cellId = "RecipeDetailCell"
+        static let mainDataRow = 0
     }
     
     // MARK: - Properties
@@ -20,10 +20,11 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundColor = .systemBackground
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(RecipeDetailHeaderView.self, forHeaderFooterViewReuseIdentifier: RecipeDetailHeaderView.reuseIdentifier)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.cellId)
+        tableView.register(RecipeDetailMainDataCell.self, forCellReuseIdentifier: RecipeDetailMainDataCell.reuseIdentifer)
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -70,8 +71,14 @@ extension RecipeDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellId, for: indexPath)
-        return cell
+        if indexPath.row == Constants.mainDataRow {
+            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDetailMainDataCell.reuseIdentifer, for: indexPath) as! RecipeDetailMainDataCell
+            cell.setup(title: "Pizza", category: "Pizza", time: "60 mins", authorName: "Jon Wick", likeCount: 100)
+            return cell
+        }
+        
+        let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
+        return defaultCell
     }
 }
 
