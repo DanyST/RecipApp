@@ -19,8 +19,10 @@ final class AppCoordinator: Coordinator {
     
     // MARK: - Methods
     override func start() {
-        let recipeListViewController = RecipeListViewController()
-        let recipeListNavigation = UINavigationController(rootViewController: recipeListViewController)
+        let recipeListNavigation = UINavigationController()
+        let recipeCoordinator = RecipeCoordinator(presenter: recipeListNavigation)
+        addChildCoordinator(recipeCoordinator)
+        recipeCoordinator.start()
         
         window.rootViewController = recipeListNavigation
         window.makeKeyAndVisible()
