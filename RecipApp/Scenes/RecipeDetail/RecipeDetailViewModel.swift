@@ -17,7 +17,7 @@ protocol RecipeDetailViewModelProtocol {
     func numberOfRows(in section: Int) -> Int
 }
 
-class RecipeDetailViewModel: RecipeListViewModelProtocol {
+class RecipeDetailViewModel: RecipeDetailViewModelProtocol {
     
     // MARK: - Properties
     weak var coordinatorDelegate: RecipeDetailViewModelCoordinatorDelegate?

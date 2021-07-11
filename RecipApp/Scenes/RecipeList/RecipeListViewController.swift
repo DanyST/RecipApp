@@ -87,6 +87,12 @@ extension RecipeListViewController: UICollectionViewDataSource {
     }
 }
 
+extension RecipeListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItem(at: indexPath)
+    }
+}
+
 // MARK: - UICollectionViewDelegateFlowLayout
 extension RecipeListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

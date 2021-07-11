@@ -27,4 +27,14 @@ final class RecipeCoordinator: Coordinator {
     }
 }
 
-extension RecipeCoordinator: RecipeListViewModelCoordinatorDelegate {}
+extension RecipeCoordinator: RecipeListViewModelCoordinatorDelegate {
+    func navigateToRecipeDetail() {
+        let recipeDetailViewModel = RecipeDetailViewModel()
+        let recipeDetailViewController = RecipeDetailViewController(viewModel: recipeDetailViewModel)
+        recipeDetailViewModel.coordinatorDelegate = self
+        recipeDetailViewModel.viewDelegate = recipeDetailViewController
+        presenter.pushViewController(recipeDetailViewController, animated: true)
+    }
+}
+
+extension RecipeCoordinator: RecipeDetailViewModelCoordinatorDelegate {}
