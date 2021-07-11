@@ -52,6 +52,23 @@
 			path = AppCoordinator;
 			sourceTree = "<group>";
 		};
+		935DCA7D269A73FA00AD5FD5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				935DCA7E269A73FD00AD5FD5 /* RecipeList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		935DCA7E269A73FD00AD5FD5 /* RecipeList */ = {
+			isa = PBXGroup;
+			children = (
+				93DAE1B2269A50AC0020CC7B /* RecipeListViewController.swift */,
+				93DAE1B4269A53BB0020CC7B /* RecipeCollectionViewCell.swift */,
+			);
+			path = RecipeList;
+			sourceTree = "<group>";
+		};
 		93DAE192269A4E090020CC7B = {
 			isa = PBXGroup;
 			children = (
@@ -74,8 +91,7 @@
 				93DAE19E269A4E0A0020CC7B /* AppDelegate.swift */,
 				93DAE1A0269A4E0A0020CC7B /* SceneDelegate.swift */,
 				935DCA75269A70B200AD5FD5 /* AppCoordinator */,
-				93DAE1B2269A50AC0020CC7B /* RecipeListViewController.swift */,
-				93DAE1B4269A53BB0020CC7B /* RecipeCollectionViewCell.swift */,
+				935DCA7D269A73FA00AD5FD5 /* Scenes */,
 				935DCA73269A6F1000AD5FD5 /* RoundedImageView.swift */,
 				93DAE1A7269A4E130020CC7B /* Assets.xcassets */,
 				93DAE1A9269A4E130020CC7B /* LaunchScreen.storyboard */,
