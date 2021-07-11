@@ -10,6 +10,7 @@
 		935DCA74269A6F1000AD5FD5 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DCA73269A6F1000AD5FD5 /* RoundedImageView.swift */; };
 		935DCA78269A70C700AD5FD5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DCA77269A70C700AD5FD5 /* Coordinator.swift */; };
 		935DCA7C269A71AC00AD5FD5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DCA7B269A71AC00AD5FD5 /* AppCoordinator.swift */; };
+		935DCA85269A769400AD5FD5 /* RecipeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DCA84269A769400AD5FD5 /* RecipeCoordinator.swift */; };
 		93DAE19F269A4E0A0020CC7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DAE19E269A4E0A0020CC7B /* AppDelegate.swift */; };
 		93DAE1A1269A4E0A0020CC7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DAE1A0269A4E0A0020CC7B /* SceneDelegate.swift */; };
 		93DAE1A8269A4E130020CC7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DAE1A7269A4E130020CC7B /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		935DCA73269A6F1000AD5FD5 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		935DCA77269A70C700AD5FD5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		935DCA7B269A71AC00AD5FD5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		935DCA84269A769400AD5FD5 /* RecipeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCoordinator.swift; sourceTree = "<group>"; };
 		93DAE19B269A4E0A0020CC7B /* RecipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DAE19E269A4E0A0020CC7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93DAE1A0269A4E0A0020CC7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		935DCA7E269A73FD00AD5FD5 /* RecipeList */ = {
 			isa = PBXGroup;
 			children = (
+				935DCA84269A769400AD5FD5 /* RecipeCoordinator.swift */,
 				93DAE1B2269A50AC0020CC7B /* RecipeListViewController.swift */,
 				93DAE1B4269A53BB0020CC7B /* RecipeCollectionViewCell.swift */,
 			);
@@ -199,6 +202,7 @@
 				935DCA74269A6F1000AD5FD5 /* RoundedImageView.swift in Sources */,
 				93DAE1A1269A4E0A0020CC7B /* SceneDelegate.swift in Sources */,
 				93DAE1B3269A50AC0020CC7B /* RecipeListViewController.swift in Sources */,
+				935DCA85269A769400AD5FD5 /* RecipeCoordinator.swift in Sources */,
 				935DCA7C269A71AC00AD5FD5 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
