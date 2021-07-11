@@ -85,6 +85,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		935DCA83269A761300AD5FD5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93DAE1AC269A4E130020CC7B /* Info.plist */,
+				93DAE1A9269A4E130020CC7B /* LaunchScreen.storyboard */,
+				93DAE1A7269A4E130020CC7B /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		93DAE192269A4E090020CC7B = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +119,7 @@
 				935DCA75269A70B200AD5FD5 /* AppCoordinator */,
 				935DCA7D269A73FA00AD5FD5 /* Scenes */,
 				935DCA7F269A744200AD5FD5 /* Commons */,
-				93DAE1A7269A4E130020CC7B /* Assets.xcassets */,
-				93DAE1A9269A4E130020CC7B /* LaunchScreen.storyboard */,
-				93DAE1AC269A4E130020CC7B /* Info.plist */,
+				935DCA83269A761300AD5FD5 /* Supporting Files */,
 			);
 			path = RecipApp;
 			sourceTree = "<group>";
@@ -332,7 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZHL7XD48E;
-				INFOPLIST_FILE = RecipApp/Info.plist;
+				INFOPLIST_FILE = "RecipApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -352,7 +360,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZHL7XD48E;
-				INFOPLIST_FILE = RecipApp/Info.plist;
+				INFOPLIST_FILE = "RecipApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
