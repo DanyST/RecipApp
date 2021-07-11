@@ -11,7 +11,6 @@ final class RecipeListViewController: UIViewController {
     
     enum Constants {
         static let columns: CGFloat = 2
-        static let cellId = "RecipeCell"
     }
     
     // MARK: - Properties
@@ -52,7 +51,7 @@ final class RecipeListViewController: UIViewController {
 extension RecipeListViewController {
     func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "RecipApp"
+        title = "Discover"
     }
 }
 
