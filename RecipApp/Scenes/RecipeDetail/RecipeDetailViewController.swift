@@ -9,6 +9,10 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDelegate {
     
+    enum Constants {
+        static let cellId = "RecipeDetailCell"
+    }
+    
     // MARK: - Properties
     private let viewModel: RecipeDetailViewModelProtocol
     
@@ -18,6 +22,7 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.cellId)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -49,12 +54,17 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
 
 
 extension RecipeDetailViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSections
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.numberOfRows(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellId, for: indexPath)
+        return cell
     }
 }
 
