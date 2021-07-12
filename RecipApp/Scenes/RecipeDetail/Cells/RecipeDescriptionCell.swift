@@ -55,6 +55,7 @@ private extension RecipeDescriptionCell {
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         ])
+        titleLabel.setContentHuggingPriority(.defaultLow - 1, for: .vertical)
         
         contentView.addSubview(detailLabel)
         NSLayoutConstraint.activate([
