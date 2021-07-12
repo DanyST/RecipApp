@@ -28,6 +28,6 @@ class RecipeDetailViewModel: RecipeDetailViewModelProtocol {
     }
     
     func numberOfRows(in section: Int) -> Int {
-        return 2
+        return 3
     }
 }

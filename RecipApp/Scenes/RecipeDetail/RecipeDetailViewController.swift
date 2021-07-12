@@ -10,8 +10,9 @@ import UIKit
 class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDelegate {
     
     enum Constants {
-        static let mainDataRow = 0
-        static let descriptionRow = 1
+        static let headerRow = 0
+        static let mainDataRow = 1
+        static let descriptionRow = 2
     }
     
     // MARK: - Properties
@@ -25,7 +26,7 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(RecipeDetailHeaderView.self, forHeaderFooterViewReuseIdentifier: RecipeDetailHeaderView.reuseIdentifier)
+        tableView.register(RecipeDetailHeaderCell.self, forCellReuseIdentifier: RecipeDetailHeaderCell.reuseIdentifier)
         tableView.register(RecipeDetailMainDataCell.self, forCellReuseIdentifier: RecipeDetailMainDataCell.reuseIdentifer)
         tableView.register(RecipeDescriptionCell.self, forCellReuseIdentifier: RecipeDescriptionCell.reuseIdentifer)
         tableView.contentInsetAdjustmentBehavior = .never
@@ -74,31 +75,36 @@ extension RecipeDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == Constants.mainDataRow {
+        switch indexPath.row {
+        case Constants.headerRow:
+            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDetailHeaderCell.reuseIdentifier, for: indexPath) as! RecipeDetailHeaderCell
+                cell.setup(imageUrl: nil)            
+            return cell
+            
+        case Constants.mainDataRow:
             let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDetailMainDataCell.reuseIdentifer, for: indexPath) as! RecipeDetailMainDataCell
             cell.setup(title: "Pizza", category: "Pizza", time: "60 mins", authorName: "Jon Wick", likeCount: 100)
             return cell
             
-        } else if indexPath.row == Constants.descriptionRow {
-            
+        case Constants.descriptionRow:
             let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDescriptionCell.reuseIdentifer, for: indexPath) as! RecipeDescriptionCell
             cell.setup(description: "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your")
+            
             return cell
+        default:
+            
+            let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
+            return defaultCell
         }
-        
-        let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
-        return defaultCell
     }
 }
 
 // MARK: - UITableViewDelegate
 extension RecipeDetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let recipeHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: RecipeDetailHeaderView.reuseIdentifier)
-        return recipeHeaderView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard Constants.headerRow == indexPath.row else {
+            return UITableView.automaticDimension
+        }
         return view.frame.height / 3
     }
     

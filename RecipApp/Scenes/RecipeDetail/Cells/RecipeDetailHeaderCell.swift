@@ -7,13 +7,13 @@
 
 import UIKit
 
-class RecipeDetailHeaderView: UITableViewHeaderFooterView {
+class RecipeDetailHeaderCell: UITableViewCell {
     
     // MARK: - Properties
-    static let reuseIdentifier = "\(RecipeDetailHeaderView.self)"
+    static let reuseIdentifier = "\(RecipeDetailHeaderCell.self)"
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "food"))
+    private let recipeImageView: UIImageView = {
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,8 +36,8 @@ class RecipeDetailHeaderView: UITableViewHeaderFooterView {
     }()
     
     // MARK: - Initialization
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
     }
     
@@ -47,24 +47,25 @@ class RecipeDetailHeaderView: UITableViewHeaderFooterView {
 }
 
 // MARK: - Setup UI
-extension RecipeDetailHeaderView {
+private extension RecipeDetailHeaderCell {
     func setupUI() {
         contentView.backgroundColor = .systemBackground
         setupConstraints()
     }
     
     func setupConstraints() {
-        contentView.addSubview(imageView)
+        contentView.addSubview(recipeImageView)
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            recipeImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor),
+            recipeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            recipeImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            recipeImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            recipeImageView.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor),
         ])
         
         contentView.addSubview(blurView)
         NSLayoutConstraint.activate([
-            blurView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 16),
+            blurView.topAnchor.constraint(equalTo: recipeImageView.topAnchor, constant: 44 + 16),
             blurView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             blurView.heightAnchor.constraint(equalToConstant: 44),
             blurView.widthAnchor.constraint(equalToConstant: 44),
@@ -77,5 +78,12 @@ extension RecipeDetailHeaderView {
             backButton.centerYAnchor.constraint(equalTo: blurView.centerYAnchor),
             backButton.centerXAnchor.constraint(equalTo: blurView.centerXAnchor)
         ])
+    }
+}
+
+extension RecipeDetailHeaderCell {
+    func setup(imageUrl: URL?) {
+        let image = UIImage(named: "food")
+        recipeImageView.image = image
     }
 }
