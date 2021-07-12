@@ -11,6 +11,7 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
     
     enum Constants {
         static let mainDataRow = 0
+        static let descriptionRow = 1
     }
     
     // MARK: - Properties
@@ -20,11 +21,13 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundColor = .systemBackground
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 150
+        tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(RecipeDetailHeaderView.self, forHeaderFooterViewReuseIdentifier: RecipeDetailHeaderView.reuseIdentifier)
         tableView.register(RecipeDetailMainDataCell.self, forCellReuseIdentifier: RecipeDetailMainDataCell.reuseIdentifer)
+        tableView.register(RecipeDescriptionCell.self, forCellReuseIdentifier: RecipeDescriptionCell.reuseIdentifer)
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -75,6 +78,12 @@ extension RecipeDetailViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDetailMainDataCell.reuseIdentifer, for: indexPath) as! RecipeDetailMainDataCell
             cell.setup(title: "Pizza", category: "Pizza", time: "60 mins", authorName: "Jon Wick", likeCount: 100)
             return cell
+            
+        } else if indexPath.row == Constants.descriptionRow {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDescriptionCell.reuseIdentifer, for: indexPath) as! RecipeDescriptionCell
+            cell.setup(description: "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your")
+            return cell
         }
         
         let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
@@ -91,5 +100,9 @@ extension RecipeDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return view.frame.height / 3
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
