@@ -18,6 +18,8 @@
 		935DCA93269A9DA000AD5FD5 /* RecipeDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DCA92269A9DA000AD5FD5 /* RecipeDetailHeaderCell.swift */; };
 		935DCA95269ABD6800AD5FD5 /* RecipeDetailMainDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DCA94269ABD6800AD5FD5 /* RecipeDetailMainDataCell.swift */; };
 		935DCA98269AD49A00AD5FD5 /* RecipeDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935DCA97269AD49A00AD5FD5 /* RecipeDescriptionCell.swift */; };
+		939FC813269C09010099DF9B /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939FC812269C09010099DF9B /* ReusableView.swift */; };
+		939FC817269C0A870099DF9B /* UILabel+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939FC816269C0A870099DF9B /* UILabel+Custom.swift */; };
 		93DAE19F269A4E0A0020CC7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DAE19E269A4E0A0020CC7B /* AppDelegate.swift */; };
 		93DAE1A1269A4E0A0020CC7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DAE1A0269A4E0A0020CC7B /* SceneDelegate.swift */; };
 		93DAE1A8269A4E130020CC7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DAE1A7269A4E130020CC7B /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		935DCA92269A9DA000AD5FD5 /* RecipeDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailHeaderCell.swift; sourceTree = "<group>"; };
 		935DCA94269ABD6800AD5FD5 /* RecipeDetailMainDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailMainDataCell.swift; sourceTree = "<group>"; };
 		935DCA97269AD49A00AD5FD5 /* RecipeDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDescriptionCell.swift; sourceTree = "<group>"; };
+		939FC812269C09010099DF9B /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		939FC816269C0A870099DF9B /* UILabel+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Custom.swift"; sourceTree = "<group>"; };
 		93DAE19B269A4E0A0020CC7B /* RecipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DAE19E269A4E0A0020CC7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93DAE1A0269A4E0A0020CC7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			children = (
 				935DCA89269A7AE700AD5FD5 /* Extensions */,
 				935DCA80269A744700AD5FD5 /* Views */,
+				939FC814269C09460099DF9B /* Protocols */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				935DCA8A269A7B0000AD5FD5 /* String+Localization.swift */,
+				939FC816269C0A870099DF9B /* UILabel+Custom.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,6 +147,14 @@
 				935DCA97269AD49A00AD5FD5 /* RecipeDescriptionCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		939FC814269C09460099DF9B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				939FC812269C09010099DF9B /* ReusableView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		93DAE192269A4E090020CC7B = {
@@ -248,10 +262,12 @@
 				935DCA91269A97C000AD5FD5 /* RecipeDetailViewModel.swift in Sources */,
 				93DAE1A1269A4E0A0020CC7B /* SceneDelegate.swift in Sources */,
 				93DAE1B3269A50AC0020CC7B /* RecipeListViewController.swift in Sources */,
+				939FC817269C0A870099DF9B /* UILabel+Custom.swift in Sources */,
 				935DCA95269ABD6800AD5FD5 /* RecipeDetailMainDataCell.swift in Sources */,
 				935DCA85269A769400AD5FD5 /* RecipeCoordinator.swift in Sources */,
 				935DCA8E269A952D00AD5FD5 /* RecipeDetailViewController.swift in Sources */,
 				935DCA7C269A71AC00AD5FD5 /* AppCoordinator.swift in Sources */,
+				939FC813269C09010099DF9B /* ReusableView.swift in Sources */,
 				935DCA93269A9DA000AD5FD5 /* RecipeDetailHeaderCell.swift in Sources */,
 				935DCA88269A77EE00AD5FD5 /* RecipeListViewModel.swift in Sources */,
 				935DCA98269AD49A00AD5FD5 /* RecipeDescriptionCell.swift in Sources */,

@@ -27,8 +27,8 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(RecipeDetailHeaderCell.self, forCellReuseIdentifier: RecipeDetailHeaderCell.reuseIdentifier)
-        tableView.register(RecipeDetailMainDataCell.self, forCellReuseIdentifier: RecipeDetailMainDataCell.reuseIdentifer)
-        tableView.register(RecipeDescriptionCell.self, forCellReuseIdentifier: RecipeDescriptionCell.reuseIdentifer)
+        tableView.register(RecipeDetailMainDataCell.self, forCellReuseIdentifier: RecipeDetailMainDataCell.reuseIdentifier)
+        tableView.register(RecipeDescriptionCell.self, forCellReuseIdentifier: RecipeDescriptionCell.reuseIdentifier)
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -82,12 +82,12 @@ extension RecipeDetailViewController: UITableViewDataSource {
             return cell
             
         case Constants.mainDataRow:
-            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDetailMainDataCell.reuseIdentifer, for: indexPath) as! RecipeDetailMainDataCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDetailMainDataCell.reuseIdentifier, for: indexPath) as! RecipeDetailMainDataCell
             cell.setup(title: "Pizza", category: "Pizza", time: "60 mins", authorName: "Jon Wick", likeCount: 100)
             return cell
             
         case Constants.descriptionRow:
-            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDescriptionCell.reuseIdentifer, for: indexPath) as! RecipeDescriptionCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDescriptionCell.reuseIdentifier, for: indexPath) as! RecipeDescriptionCell
             cell.setup(description: "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your")
             
             return cell

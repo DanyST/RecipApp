@@ -7,11 +7,9 @@
 
 import UIKit
 
-class RecipeDetailHeaderCell: UITableViewCell {
+class RecipeDetailHeaderCell: UITableViewCell, ReusableView  {
     
-    // MARK: - Properties
-    static let reuseIdentifier = "\(RecipeDetailHeaderCell.self)"
-    
+    // MARK: - Properties   
     private let recipeImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill

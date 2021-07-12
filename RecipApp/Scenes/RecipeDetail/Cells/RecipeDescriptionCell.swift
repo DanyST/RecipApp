@@ -7,11 +7,9 @@
 
 import UIKit
 
-final class RecipeDescriptionCell: UITableViewCell {
+final class RecipeDescriptionCell: UITableViewCell, ReusableView {
     
-    // MARK: - Properties
-    static let reuseIdentifer = "\(RecipeDescriptionCell.self)"
-    
+    // MARK: - Properties   
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Description".localized

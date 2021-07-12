@@ -7,11 +7,9 @@
 
 import UIKit
 
-final class RecipeDetailMainDataCell: UITableViewCell {
+final class RecipeDetailMainDataCell: UITableViewCell, ReusableView {
     
-    // MARK: - Properties
-    static let reuseIdentifer = "\(RecipeDetailMainDataCell.self)"
-    
+    // MARK: - Properties    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label

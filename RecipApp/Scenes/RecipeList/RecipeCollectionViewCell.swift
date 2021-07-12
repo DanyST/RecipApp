@@ -7,11 +7,9 @@
 
 import UIKit
 
-final class RecipeCollectionViewCell: UICollectionViewCell {
+final class RecipeCollectionViewCell: UICollectionViewCell, ReusableView {
     
     // MARK: - Properties
-    static let reuseIdentifier = "\(RecipeCollectionViewCell.self)"
-    
     private let imageView: RoundedImageView = {
         let imageView = RoundedImageView(roundedType: .rounded)
         imageView.contentMode = .scaleAspectFill
