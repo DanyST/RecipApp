@@ -16,18 +16,16 @@ extension UILabel {
         return label
     }
     
-    static var customSubTitleLabel: UILabel = {
+    static var customSubTitleLabel: UILabel {
         let label = UILabel.customTitleLabel
         label.font = .systemFont(ofSize: 18, weight: .bold)
         return label
-    }()
+    }
     
-    static var customSecondaryLabel: UILabel = {
+    static var customSecondaryLabel: UILabel {
         let label = UILabel()
         label.textColor = .secondaryLabel
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
-    
-    
+    }
 }
