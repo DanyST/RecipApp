@@ -81,8 +81,8 @@ private extension RecipeDetailMainDataCell {
         let authorStackView = UIStackView(arrangedSubviews: [authorImageView, authorLabel])
         authorStackView.axis = .horizontal
         authorStackView.spacing = 8
-        authorStackView.alignment = .center
-        authorStackView.distribution = .equalCentering
+        authorStackView.alignment = .fill
+        authorStackView.distribution = .equalSpacing
         
         NSLayoutConstraint.activate([
             authorImageView.heightAnchor.constraint(equalToConstant: 30),
@@ -92,8 +92,8 @@ private extension RecipeDetailMainDataCell {
         let likeStackView = UIStackView(arrangedSubviews: [likeButton, likeLabel])
         authorStackView.axis = .horizontal
         authorStackView.spacing = 8
-        authorStackView.alignment = .trailing
-        authorStackView.distribution = .fill
+        authorStackView.alignment = .fill
+        authorStackView.distribution = .equalSpacing
         
         NSLayoutConstraint.activate([
             likeButton.heightAnchor.constraint(equalToConstant: 30),
@@ -102,13 +102,15 @@ private extension RecipeDetailMainDataCell {
         
         let footerStackView = UIStackView(arrangedSubviews: [authorStackView, likeStackView])
         footerStackView.axis = .horizontal
-        footerStackView.distribution = .fill
-        footerStackView.alignment = .center
+        footerStackView.spacing = 16
+        footerStackView.distribution = .equalSpacing
+        footerStackView.alignment = .fill
         
         let containerStackView = UIStackView(arrangedSubviews: [titleLabel, detailLabel, footerStackView])
         containerStackView.axis = .vertical
         containerStackView.spacing = 16
-        containerStackView.distribution = .fillEqually
+        containerStackView.distribution = .fill
+        containerStackView.alignment = .fill
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(containerStackView)
