@@ -120,6 +120,8 @@ private extension RecipeDetailMainDataCell {
             containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             containerStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
         ])
+        
+        titleLabel.setContentHuggingPriority(.defaultLow - 1, for: .vertical)
     }
 }
 
