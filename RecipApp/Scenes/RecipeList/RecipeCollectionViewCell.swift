@@ -18,27 +18,9 @@ final class RecipeCollectionViewCell: UICollectionViewCell, ReusableView {
         return imageView
     }()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .label
-        label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let categoryLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .secondaryLabel
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let timeLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .secondaryLabel
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    private let titleLabel = UILabel.customTitleLabel
+    private let categoryLabel = UILabel.customSecondaryLabel
+    private let timeLabel = UILabel.customSecondaryLabel
     
     // MARK: - Initialization
     override init(frame: CGRect) {

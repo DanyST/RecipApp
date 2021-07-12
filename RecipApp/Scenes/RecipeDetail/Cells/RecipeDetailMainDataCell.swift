@@ -10,20 +10,8 @@ import UIKit
 final class RecipeDetailMainDataCell: UITableViewCell, ReusableView {
     
     // MARK: - Properties    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .label
-        label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let detailLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .secondaryLabel
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    private let titleLabel = UILabel.customTitleLabel
+    private let detailLabel = UILabel.customSecondaryLabel
     
     private let authorImageView: RoundedImageView = {
         let imageView = RoundedImageView(roundedType: .circle)
@@ -33,13 +21,8 @@ final class RecipeDetailMainDataCell: UITableViewCell, ReusableView {
         return imageView
     }()
     
-    private let authorLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .label
-        label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    private let authorLabel = UILabel.customSubTitleLabel
+    private let likeLabel = UILabel.customSubTitleLabel
     
     private let likeButton: UIButton = {
         let button = UIButton(type: .system)
@@ -47,14 +30,6 @@ final class RecipeDetailMainDataCell: UITableViewCell, ReusableView {
         button.tintColor = .systemGreen
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
-    }()
-    
-    private let likeLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .label
-        label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
     }()
     
     // MARK: - Initialization

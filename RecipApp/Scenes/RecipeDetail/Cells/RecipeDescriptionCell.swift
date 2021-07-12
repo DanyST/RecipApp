@@ -9,21 +9,16 @@ import UIKit
 
 final class RecipeDescriptionCell: UITableViewCell, ReusableView {
     
-    // MARK: - Properties   
+    // MARK: - Properties
     private let titleLabel: UILabel = {
-        let label = UILabel()
+        let label = UILabel.customTitleLabel
         label.text = "Description".localized
-        label.textColor = .label
-        label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let detailLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .secondaryLabel
+        let label = UILabel.customSecondaryLabel
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
