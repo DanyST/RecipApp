@@ -63,30 +63,19 @@ private extension RecipeIngredientCell {
 // MARK: - Sync UI
 extension RecipeIngredientCell {
     func setup(withIngredients ingredients: [String]) {
-        removeAllIngredients()
+        ingredientsStackView.removeFullyAllArrangedSubviews()
         
         ingredients.forEach { ingredient in
             let ingredient = createIngredientView(with: ingredient)
             ingredientsStackView.addArrangedSubview(ingredient)
         }
-        updateConstraints()
     }
-    
-    private func removeAllIngredients() {
-        let arrangedSubviews = ingredientsStackView.arrangedSubviews
-        
-        if !arrangedSubviews.isEmpty {
-            arrangedSubviews.forEach { view in
-                ingredientsStackView.removeArrangedSubview(view)
-                view.removeFromSuperview()
-            }
-        }
-    }
-    
+
     private func createIngredientView(with ingredient:  String) -> UIStackView {
         let ingredientlabel = UILabel()
         ingredientlabel.textColor = .label
         ingredientlabel.text = ingredient
+        ingredientlabel.setContentCompressionResistancePriority(.defaultHigh + 10, for: .vertical)
         
         let iconImageView = UIImageView(image: UIImage(systemName: "drop.fill"))
         iconImageView.tintColor = .green
@@ -101,9 +90,7 @@ extension RecipeIngredientCell {
             iconImageView.heightAnchor.constraint(equalToConstant: 22),
             iconImageView.widthAnchor.constraint(equalToConstant: 18),
         ])
-        
-        ingredientlabel.setContentCompressionResistancePriority(.defaultHigh + 10, for: .vertical)
-        
+                       
         return stackView
     }
 }
