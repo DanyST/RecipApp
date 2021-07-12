@@ -13,6 +13,7 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         static let headerRow = 0
         static let mainDataRow = 1
         static let descriptionRow = 2
+        static let ingredientRow = 3
     }
     
     // MARK: - Properties
@@ -29,6 +30,7 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewModelViewDel
         tableView.register(RecipeDetailHeaderCell.self, forCellReuseIdentifier: RecipeDetailHeaderCell.reuseIdentifier)
         tableView.register(RecipeDetailMainDataCell.self, forCellReuseIdentifier: RecipeDetailMainDataCell.reuseIdentifier)
         tableView.register(RecipeDescriptionCell.self, forCellReuseIdentifier: RecipeDescriptionCell.reuseIdentifier)
+        tableView.register(RecipeIngredientCell.self, forCellReuseIdentifier: RecipeIngredientCell.reuseIdentifier)
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -91,6 +93,12 @@ extension RecipeDetailViewController: UITableViewDataSource {
             cell.setup(description: "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your. Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your")
             
             return cell
+        
+        case Constants.ingredientRow:
+            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeIngredientCell.reuseIdentifier, for: indexPath) as! RecipeIngredientCell
+            cell.setup(withIngredients: ["4 Eggs", "1/2 Butter", "100gr Sugar", "1/2kg Chocolate", "4 Eggs", "1/2 Butter", "100gr Sugar", "1/2kg Chocolate"])
+            return cell
+            
         default:
             
             let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
